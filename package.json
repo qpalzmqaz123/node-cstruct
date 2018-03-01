@@ -1,0 +1,17 @@
+{
+  "name": "cstruct",
+  "version": "1.0.0",
+  "description": "js to c struct/union mapping",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "struct",
+    "c",
+    "union"
+  ],
+  "author": "wangqj",
+  "license": "ISC",
+  "devDependencies": {}
+}
