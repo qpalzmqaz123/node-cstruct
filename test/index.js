@@ -46,7 +46,7 @@ describe('test int', () => {
 
 describe('test array', () => {
   it('test int', () => {
-    const arr = new struct.int.times(3)
+    const arr = new (struct.int.times(3))()
 
     for (let i = 0; i < arr.length; i++) {
       arr[i].$value = i + 1
