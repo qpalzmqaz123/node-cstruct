@@ -6,8 +6,17 @@ const struct = new Struct()
 class Point extends struct.struct {
   static get fields () {
     return [
-      [ 'x', struct.int, 4 ],
-      [ 'y', struct.int, 4 ]
+      [ 'x', struct.int ],
+      [ 'y', struct.int, 5 ],
+      [ 'z', struct.int, 5 ],
+      /*
+      [ 'x', struct.char.times(3) ],
+      [ 'y', struct.int ]
+      */
+      /*
+      [ 'x', struct.char ],
+      [ 'y', struct.int ]
+      */
     ]
   }
 }
