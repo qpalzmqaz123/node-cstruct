@@ -61,13 +61,21 @@ describe('test array', () => {
 
 describe('struct', () => {
   it('test base', () => {
-    const point = struct.struct([
-      [ 'x', struct.int ],
-      [ 'y', struct.int ]
-    ])
+    class Point extends struct.struct {
+      static get fields () {
+        return [
+          [ 'x', struct.int ],
+          [ 'y', struct.int ]
+        ]
+      }
+    }
 
-    point.x = 1
-    point.y = 2
+    const point = new Point({
+      x: 1,
+      y: 10
+    })
+
+    point.y.$value = 2
 
     assert(Buffer.compare(
       point.$buffer,

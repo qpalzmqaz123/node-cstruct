@@ -10,7 +10,7 @@ class Point extends struct.struct {
       [ 'y', struct.int, 5 ],
       [ 'z', struct.int, 5 ],
       /*
-      [ 'x', struct.char.times(3) ],
+      [ 'x', struct.char.times(10) ],
       [ 'y', struct.int ]
       */
       /*
@@ -23,9 +23,8 @@ class Point extends struct.struct {
 
 const point = new Point({
   x: 2,
-  y: 3
+  y: 3,
+  z: 4
 })
 
-//console.log(point)
-
-console.log(Point.structInfo)
+console.log(point.$buffer)
