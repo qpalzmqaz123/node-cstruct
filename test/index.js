@@ -59,7 +59,7 @@ describe('test array', () => {
   })
 })
 
-describe('struct', () => {
+describe('test struct', () => {
   it('test base', () => {
     class Point extends struct.struct {
       static get fields () {
@@ -84,13 +84,19 @@ describe('struct', () => {
   })
 
   it('test specify bit size', () => {
-    const point = struct.struct([
-      [ 'x', struct.int, 4 ],
-      [ 'y', struct.int, 4 ]
-    ])
+    class Point extends struct.struct {
+      static get fields () {
+        return [
+          [ 'x', struct.int, 4 ],
+          [ 'y', struct.int, 4 ]
+        ]
+      }
+    }
 
-    point.x = 1
-    point.y = 2
+    const point = new Point()
+
+    point.x.$value = 1
+    point.y.$value = 2
 
     assert(Buffer.compare(
       point.$buffer,
@@ -120,7 +126,7 @@ describe('struct', () => {
   })
 })
 
-describe('union', () => {
+describe('test union', () => {
   it('test union', () => {
     const vaule = struct.union([
       [ 'i', struct.int ],
