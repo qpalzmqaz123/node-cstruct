@@ -13,5 +13,8 @@
   ],
   "author": "wangqj",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "bn.js": "^4.11.8"
+  }
 }
