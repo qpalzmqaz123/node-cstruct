@@ -1,7 +1,8 @@
 'use strict'
 
 const CharType = require('./lib/char')
-const IntType = require('./lib/int')
+const IntType = require('./lib/int').IntType
+const LongType = require('./lib/int').LongType
 const StructType = require('./lib/struct')
 
 class Struct {
@@ -11,6 +12,10 @@ class Struct {
 
   get int () {
     return IntType
+  }
+
+  get long () {
+    return LongType
   }
 
   get struct () {
