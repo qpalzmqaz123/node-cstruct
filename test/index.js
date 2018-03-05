@@ -42,6 +42,18 @@ describe('test int', () => {
       Buffer.from('01000000', 'hex')
     ) === 0)
   })
+
+  it('test positive', () => {
+    const num1 = new struct.int(100)
+
+    assert(num1.$value === 100)
+  })
+
+  it('test negative', () => {
+    const num1 = new struct.int(4294967295)
+
+    assert(num1.$value === -1)
+  })
 })
 
 describe('test array', () => {
