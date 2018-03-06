@@ -33,6 +33,38 @@ struct.packedValueSize = {
 
 struct.isBigEndian = false
 
+describe('test bool', () => {
+  it('test true', () => {
+    const a = new struct.bool()
+
+    a.$value = true
+
+    assert(Buffer.compare(
+      a.$buffer,
+      Buffer.from('01', 'hex')
+    ) === 0)
+  })
+
+  it('test false', () => {
+    const a = new struct.bool()
+
+    a.$value = false
+
+    assert(Buffer.compare(
+      a.$buffer,
+      Buffer.from('00', 'hex')
+    ) === 0)
+  })
+
+  it('test r/w', () => {
+    const a = new struct.bool()
+
+    a.$value = true
+
+    assert.equal(a.$value, true)
+  })
+})
+
 describe('test int', () => {
   it('test 1', () => {
     const int1 = new struct.int(1)
