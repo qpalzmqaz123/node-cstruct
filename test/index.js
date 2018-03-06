@@ -117,23 +117,37 @@ describe('test struct', () => {
   })
 
   it('test nested', () => {
-    const testStruct = struct.struct([
-      [ 'a', struct.int ],
-      [ 'point', struct.struct([
-        [ 'x', struct.int ],
-        [ 'y', struct.int ]
-      ]) ],
-      [ 'b', struct.int ]
-    ])
+    class Point extends struct.struct {
+      static get fields () {
+        return [
+          [ 'x', struct.int ],
+          [ 'y', struct.int ]
+        ]
+      }
+    }
 
-    testStruct.a = 1
-    testStruct.b = 2
-    testStruct.point.x = 3
-    testStruct.point.y = 4
+    class MyStruct extends struct.struct {
+      static get fields () {
+        return [
+          [ 'a', struct.char ],
+          [ 's', Point ],
+          [ 'b', struct.char ],
+          [ 'c', struct.char ]
+        ]
+      }
+    }
+
+    const s = new MyStruct()
+
+    s.a.$value = 1
+    s.s.x.$value = 2
+    s.s.y.$value = 4
+    s.b.$value = 8
+    s.c.$value = 5
 
     assert(Buffer.compare(
-      point.$buffer,
-      Buffer.from('01000000030000000400000002000000', 'hex')
+      s.$buffer,
+      Buffer.from('01000000020000000400000008050000', 'hex')
     ) === 0)
   })
 })
