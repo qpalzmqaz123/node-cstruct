@@ -1,3 +1,7 @@
+
+require('./char')
+
+
 const assert = require('assert')
 const Struct = require('../index')
 
