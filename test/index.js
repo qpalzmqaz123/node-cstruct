@@ -148,7 +148,7 @@ describe('test struct', () => {
     ) === 0)
   })
 
-  it('test nested', () => {
+  it('test nested 1', () => {
     class Point extends struct.struct {
       static get fields () {
         return [
@@ -180,6 +180,39 @@ describe('test struct', () => {
     assert(Buffer.compare(
       s.$buffer,
       Buffer.from('01000000020000000400000008050000', 'hex')
+    ) === 0)
+  })
+
+  it('test nested 2', () => {
+    class Test extends struct.struct {
+      static get fields () {
+        return [
+          [ 'n', struct.int ]
+        ]
+      }
+    }
+
+    class MyStruct extends struct.struct {
+      static get fields () {
+        return [
+          [ 'a', struct.char ],
+          [ 's', Test.times(3) ],
+          [ 'b', struct.char ]
+        ]
+      }
+    }
+
+    const s = new MyStruct()
+
+    s.a.$value = 1
+    s.s[0].n.$value = 3
+    s.s[1].n.$value = 4
+    s.s[2].n.$value = 5
+    s.b.$value = 2
+
+    assert(Buffer.compare(
+      s.$buffer,
+      Buffer.from('0100000003000000040000000500000002000000', 'hex')
     ) === 0)
   })
 })
