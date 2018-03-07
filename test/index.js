@@ -1,7 +1,10 @@
+'use strict'
 
+require('./bool')
 require('./char')
-require('./union')
 require('./short')
+require('./int')
+require('./union')
 
 
 const assert = require('assert')
@@ -38,61 +41,6 @@ struct.packedValueSize = {
 }
 
 struct.isBigEndian = false
-
-describe('test bool', () => {
-  it('test true', () => {
-    const a = new struct.bool()
-
-    a.$value = true
-
-    assert(Buffer.compare(
-      a.$buffer,
-      Buffer.from('01', 'hex')
-    ) === 0)
-  })
-
-  it('test false', () => {
-    const a = new struct.bool()
-
-    a.$value = false
-
-    assert(Buffer.compare(
-      a.$buffer,
-      Buffer.from('00', 'hex')
-    ) === 0)
-  })
-
-  it('test r/w', () => {
-    const a = new struct.bool()
-
-    a.$value = true
-
-    assert.equal(a.$value, true)
-  })
-})
-
-describe('test int', () => {
-  it('test 1', () => {
-    const int1 = new struct.int(1)
-
-    assert(Buffer.compare(
-      int1.$buffer,
-      Buffer.from('01000000', 'hex')
-    ) === 0)
-  })
-
-  it('test positive', () => {
-    const num1 = new struct.int(100)
-
-    assert(num1.$value === 100)
-  })
-
-  it('test negative', () => {
-    const num1 = new struct.int(4294967295)
-
-    assert(num1.$value === -1)
-  })
-})
 
 describe('test array', () => {
   it('test int', () => {

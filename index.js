@@ -6,6 +6,7 @@ const UCharType = require('./lib/char').UCharType
 const ShortType = require('./lib/short').ShortType
 const UShortType = require('./lib/short').UShortType
 const IntType = require('./lib/int').IntType
+const UIntType = require('./lib/int').UIntType
 const LongType = require('./lib/int').LongType
 const StructType = require('./lib/struct')
 const UnionType = require('./lib/union').UnionType
@@ -33,6 +34,10 @@ class Struct {
 
   get int () {
     return IntType
+  }
+
+  get uint () {
+    return UIntType
   }
 
   get long () {
