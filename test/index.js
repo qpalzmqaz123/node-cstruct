@@ -1,5 +1,6 @@
 
 require('./char')
+require('./union')
 
 
 const assert = require('assert')
@@ -217,22 +218,6 @@ describe('test struct', () => {
     assert(Buffer.compare(
       s.$buffer,
       Buffer.from('0100000003000000040000000500000002000000', 'hex')
-    ) === 0)
-  })
-})
-
-describe('test union', () => {
-  it('test union', () => {
-    const vaule = struct.union([
-      [ 'i', struct.int ],
-      [ 'f', struct.float ]
-    ])
-
-    value.f = 1
-
-    assert(Buffer.compare(
-      point.$buffer,
-      Buffer.from('0x0000803F', 'hex')
     ) === 0)
   })
 })

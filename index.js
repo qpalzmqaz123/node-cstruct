@@ -6,6 +6,7 @@ const UCharType = require('./lib/char').UCharType
 const IntType = require('./lib/int').IntType
 const LongType = require('./lib/int').LongType
 const StructType = require('./lib/struct')
+const UnionType = require('./lib/union').UnionType
 
 class Struct {
   get bool () {
@@ -33,7 +34,7 @@ class Struct {
   }
 
   get union () {
-  
+    return UnionType
   }
 }
 
