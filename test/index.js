@@ -4,6 +4,7 @@ require('./bool')
 require('./char')
 require('./short')
 require('./int')
+require('./longlong')
 require('./union')
 
 

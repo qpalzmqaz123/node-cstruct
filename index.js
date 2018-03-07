@@ -9,6 +9,8 @@ const IntType = require('./lib/int').IntType
 const UIntType = require('./lib/int').UIntType
 const LongType = require('./lib/long').LongType
 const ULongType = require('./lib/long').ULongType
+const LongLongType = require('./lib/longlong').LongLongType
+const ULongLongType = require('./lib/longlong').ULongLongType
 const StructType = require('./lib/struct')
 const UnionType = require('./lib/union').UnionType
 
@@ -47,6 +49,14 @@ class Struct {
 
   get ulong () {
     return ULongType
+  }
+
+  get longlong () {
+    return LongLongType
+  }
+
+  get ulonglong () {
+    return ULongLongType
   }
 
   get struct () {
