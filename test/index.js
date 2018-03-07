@@ -1,6 +1,7 @@
 
 require('./char')
 require('./union')
+require('./short')
 
 
 const assert = require('assert')
