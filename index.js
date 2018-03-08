@@ -13,6 +13,8 @@ const LongLongType = require('./lib/longlong').LongLongType
 const ULongLongType = require('./lib/longlong').ULongLongType
 const FloatType = require('./lib/float').FloatType
 const DoubleType = require('./lib/double').DoubleType
+const SSizeType = require('./lib/size_t').SSizeType
+const SizeType = require('./lib/size_t').SizeType
 const StructType = require('./lib/struct')
 const UnionType = require('./lib/union').UnionType
 
@@ -67,6 +69,14 @@ class Struct {
 
   get double () {
     return DoubleType
+  }
+
+  get size_t () {
+    return SizeType
+  }
+
+  get ssize_t () {
+    return SSizeType
   }
 
   get struct () {

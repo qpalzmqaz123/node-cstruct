@@ -7,6 +7,7 @@ require('./int')
 require('./longlong')
 require('./float')
 require('./double')
+require('./size_t')
 require('./union')
 
 
