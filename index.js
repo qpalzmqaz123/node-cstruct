@@ -15,6 +15,16 @@ const FloatType = require('./lib/float').FloatType
 const DoubleType = require('./lib/double').DoubleType
 const SSizeType = require('./lib/size_t').SSizeType
 const SizeType = require('./lib/size_t').SizeType
+
+const Int8Type = require('./lib/stdint').Int8Type
+const UInt8Type = require('./lib/stdint').UInt8Type
+const Int16Type = require('./lib/stdint').Int16Type
+const UInt16Type = require('./lib/stdint').UInt16Type
+const Int32Type = require('./lib/stdint').Int32Type
+const UInt32Type = require('./lib/stdint').UInt32Type
+const Int64Type = require('./lib/stdint').Int64Type
+const UInt64Type = require('./lib/stdint').UInt64Type
+
 const StructType = require('./lib/struct')
 const UnionType = require('./lib/union').UnionType
 
