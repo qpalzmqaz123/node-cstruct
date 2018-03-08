@@ -1,9 +1,7 @@
 'use strict'
 
 const assert = require('assert')
-const Struct = require('../index')
-
-const struct = new Struct()
+const struct = require('../index')
 
 describe('test bool', () => {
   it('test r/w', () => {

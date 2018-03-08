@@ -25,77 +25,35 @@ const UInt32Type = require('./lib/stdint').UInt32Type
 const Int64Type = require('./lib/stdint').Int64Type
 const UInt64Type = require('./lib/stdint').UInt64Type
 
-const StructType = require('./lib/struct')
+const StructType = require('./lib/struct').StructType
 const UnionType = require('./lib/union').UnionType
 
-class Struct {
-  get bool () {
-    return BoolType
-  }
+module.exports = {
+  bool: BoolType,
+  char: CharType,
+  uchar: UCharType,
+  short: ShortType,
+  ushort: UShortType,
+  int: IntType,
+  uint: UIntType,
+  long: LongType,
+  ulong: ULongType,
+  longlong: LongLongType,
+  ulonglong: ULongLongType,
+  float: FloatType,
+  double: DoubleType,
+  size_t: SizeType,
+  ssize_t: SSizeType,
 
-  get char () {
-    return CharType
-  }
+  int8_t: Int8Type,
+  uint8_t: UInt8Type,
+  int16_t: Int16Type,
+  uint16_t: UInt16Type,
+  int32_t: Int32Type,
+  uint32_t: UInt32Type,
+  int64_t: Int64Type,
+  uint64_t: UInt64Type,
 
-  get uchar () {
-    return UCharType
-  }
-
-  get short () {
-    return ShortType
-  }
-
-  get ushort () {
-    return UShortType
-  }
-
-  get int () {
-    return IntType
-  }
-
-  get uint () {
-    return UIntType
-  }
-
-  get long () {
-    return LongType
-  }
-
-  get ulong () {
-    return ULongType
-  }
-
-  get longlong () {
-    return LongLongType
-  }
-
-  get ulonglong () {
-    return ULongLongType
-  }
-
-  get float () {
-    return FloatType
-  }
-
-  get double () {
-    return DoubleType
-  }
-
-  get size_t () {
-    return SizeType
-  }
-
-  get ssize_t () {
-    return SSizeType
-  }
-
-  get struct () {
-    return StructType
-  }
-
-  get union () {
-    return UnionType
-  }
+  struct: StructType,
+  union: UnionType
 }
-
-module.exports = Struct
