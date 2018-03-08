@@ -5,6 +5,7 @@ require('./char')
 require('./short')
 require('./int')
 require('./longlong')
+require('./float')
 require('./union')
 
 
