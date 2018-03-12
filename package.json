@@ -1,7 +1,7 @@
 {
   "name": "cstruct",
   "version": "1.0.0",
-  "description": "js to c struct/union mapping",
+  "description": "Provides a bi-directional mapping between c data and javascript objects",
   "main": "index.js",
   "scripts": {
     "test": "mocha test/index.js"
@@ -13,7 +13,8 @@
   "keywords": [
     "struct",
     "c",
-    "union"
+    "union",
+    "ctypes"
   ],
   "author": "wangqj",
   "license": "ISC",
