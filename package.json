@@ -1,5 +1,5 @@
 {
-  "name": "cstruct",
+  "name": "node-c-struct",
   "version": "1.0.0",
   "description": "Provides a bi-directional mapping between c data and javascript objects",
   "main": "index.js",
