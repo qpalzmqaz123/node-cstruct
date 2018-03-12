@@ -42,10 +42,6 @@
 
   Return an ArrayBuffer
 
-- $times (number)
-
-  Return an instance of ArrayType
-
 - get $address ()
 
   Return real address of current object
