@@ -69,7 +69,7 @@
 ### int
 
 ```javascript
-const struct = require('cstruct')
+const struct = require('node-c-struct')
 
 const a = new struct.int()
 
@@ -82,7 +82,7 @@ console.log(a.$value) // 100
 ### array
 
 ```javascript
-const struct = require('cstruct')
+const struct = require('node-c-struct')
 
 const arr = new (struct.int.times(3))()
 
@@ -97,7 +97,7 @@ console.log(arr[1].$value) // 2
 ### union
 
 ```javascript
-const struct = require('cstruct')
+const struct = require('node-c-struct')
 
 class MyUnion extends struct.union {
   static get fields () {
@@ -130,7 +130,7 @@ console.log(a.y.$value) // 267
 ### struct
 
 ```javascript
-const struct = require('cstruct')
+const struct = require('node-c-struct')
 
 class Point extends struct.struct {
   static get fields () {
@@ -154,7 +154,7 @@ console.log(point) // <Buffer 01 00 00 00 02 00 00 00>
 ### complex struct
 
 ```javascript
-const struct = require('cstruct')
+const struct = require('node-c-struct')
 
 class Point extends struct.struct {
   static get fields () {
